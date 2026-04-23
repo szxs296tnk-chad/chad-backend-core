@@ -1,8 +1,15 @@
 import requests
 
-def query(prompt):
+BASE_URL = " https://facilitate-vatican-scheduling-wellness.trycloudflare.com"
+
+def query(prompt, model="gemma:2b"):
     r = requests.post(
-        "http://localhost:11434/api/generate",
-        json={"model": "gemma", "prompt": prompt}
+        f"{BASE_URL}/api/generate",
+        json={
+            "model": model,
+            "prompt": prompt,
+            "stream": False
+        },
+        timeout=60
     )
     return r.json()
