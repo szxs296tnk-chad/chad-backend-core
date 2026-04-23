@@ -1,6 +1,6 @@
 import requests
 
-BASE_URL = " https://facilitate-vatican-scheduling-wellness.trycloudflare.com"
+BASE_URL = "https://reno-generations-terrain-mild.trycloudflare.com"
 
 def query(prompt, model="gemma:2b"):
     r = requests.post(
